@@ -1,0 +1,2 @@
+---@diagnostic disable: undefined-global
+-- desativa avisos de variáveis não criadas
