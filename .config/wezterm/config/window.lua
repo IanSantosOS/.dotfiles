@@ -2,10 +2,13 @@ return function (config)
     config.enable_tab_bar = false
     config.enable_scroll_bar = false
     config.window_decorations = "RESIZE"
-    config.window_background_image = "$HOME/Pictures/zenburn-background.png"
+
+    config.window_background_opacity = 0.65
+
+    -- config.window_background_image = "$HOME/Pictures/zenburn-background.png"
 
     config.window_background_image_hsb = {
-        --Darken the background image
+        -- Darken the background image
         brightness = 0.3,
 
         -- You can adjust the hue by scaling its value.

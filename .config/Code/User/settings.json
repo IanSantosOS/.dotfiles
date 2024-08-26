@@ -1,0 +1,47 @@
+{
+    "editor.fontFamily": "'FiraCode Nerd Font', 'JetBrainsMono Nerd Font', 'Caskaydia Cove Nerd Font', 'CommitMono Nerd Font', 'Hack Nerd Font', 'MesloLGL Nerd Font', Consolas, 'Courier New', monospace",
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.integrated.hideOnStartup": "whenEmpty",
+    "window.customTitleBarVisibility": "never",
+    "workbench.panel.defaultLocation": "right",
+    "workbench.sideBar.location": "right",
+    "editor.renderLineHighlight": "all",
+    "editor.lineNumbers": "relative",
+    "files.autoSave": "afterDelay",
+    "zenMode.showTabs": "none",
+    "editor.fontSize": 14,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.centerLayout": false,      
+    "editor.linkedEditing": true,
+    "editor.fontLigatures": true,
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "explorer.compactFolders": false,
+    "editor.minimap.renderCharacters": false,
+    "terminal.integrated.enableImages": true,
+    "editor.guides.bracketPairsHorizontal": false,
+    "editor.bracketPairColorization.enabled": false,
+    "workbench.enableExperiments": false,
+    "editor.padding.top": 10,
+    "markdownlint.config": {
+        "MD033": false,
+        "MD034": false
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "files.associations": {
+        ".env*": "dotenv"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "keyword.other.dotenv",
+                "settings": {
+                    "foreground": "#FF000000"
+                }
+            }
+        ]
+    },
+    "editor.scrollbar.verticalScrollbarSize": 12,
+}

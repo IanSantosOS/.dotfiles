@@ -7,10 +7,12 @@ vim.keymap.set("n", "<leader>fe", vim.cmd.Ex, { desc = "Abre o Netrw tree" })
 
 vim.keymap.set("n", "<leader>lsp", ":LspRestart<CR>", { desc = "Reinicia o LSP" })
 
+vim.keymap.set({ "n", "v" }, "<leader>/", "<ESC>:let @/=''<CR>", { silent = true, desc = "Remove os resultados da busca com o /" })
+
 vim.keymap.set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>sS", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left><Left>]])
 
-vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<Esc>:update<CR>", { desc = "Salva o arquivo utilizando :update" })
+vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<ESC>:update<CR>", { desc = "Salva o arquivo utilizando :update" })
 
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Junta a linha atual com a linha de baixo mantendo o cursor na posição original" })
 
