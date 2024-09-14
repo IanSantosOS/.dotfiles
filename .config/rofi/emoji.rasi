@@ -1,0 +1,42 @@
+@theme "./theme.rasi"
+
+configuration {
+	show-icons: false;
+	case-sensitive: false;
+	hover-select: true;
+    kb-row-left: "Control+h,Control+n";
+    kb-row-down: "Control+j";
+    kb-row-up: "Control+k";
+    kb-row-right: "Control+l,Control+p";
+	kb-mode-complete: "";
+	kb-remove-to-eol: "";
+	kb-accept-entry: "Control+m,Return,KP_Enter";
+    kb-remove-char-back: "BackSpace,Shift+BackSpace";
+}
+
+textbox {
+  vertical-align:   0.5;
+  horizontal-align: 0.5;
+}
+
+listview {
+  columns:       9;
+  lines:         4;
+  cycle:         true;
+  dynamic:       false;
+  layout:        vertical;
+  flow:          horizontal;
+  reverse:       false;
+  fixed-height:  true;
+  fixed-columns: true;
+}
+
+element {
+  orientation: vertical;
+}
+
+element-text {
+  vertical-align:   0.5;
+  horizontal-align: 0.5;
+  font:            "FiraCode Nerd Font 24";
+}

@@ -41,7 +41,7 @@ vim.opt.softtabstop = 0           -- Os espaços inseridos quando aperta Tab ou 
 vim.opt.shiftwidth = 4            -- Espaços inseridos ao utilizar a tecla de recuo
 vim.opt.expandtab = true          -- Transforma Tab em Espaços
 
--- vim.opt.autoindent = true      -- Indentação automática
+vim.opt.autoindent = true         -- Indentação automática
 vim.opt.smartindent = true        -- Indentação inteligente
 vim.opt.cindent = true            -- Indentação C automática
 

@@ -25,6 +25,13 @@ local altkey        = "Mod1"
 local browser       = "vivaldi"
 local file_explorer = "pcmanfm"
 local terminal      = "wezterm"
+local window        = "rofi -show window"
+local run_laucher   = "rofi -show run"
+local app_laucher   = "rofi -show drun"
+local calc_launcher = "rofi -show calc"
+local wifi_laucher  = "rofi -show drun"
+local emoji_laucher = "rofimoji --hidden-descriptions " ..
+                      "--selector-args='-theme ~/.config/rofi/emoji.rasi'"
 local editor        = os.getenv("EDITOR") or "nvim"
 local editor_cmd    = terminal .. " -e " .. editor
 local gui_editor    = ""
@@ -263,12 +270,24 @@ local globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey }, "b",      function () awful.spawn(browser) end,
+    awful.key({ modkey }, "b", function () awful.spawn(browser) end,
               {description = "open browser", group = "launcher"}),
-    awful.key({ modkey }, "e",      function () awful.spawn(file_explorer) end,
+    awful.key({ modkey }, "e", function () awful.spawn(file_explorer) end,
               {description = "open file explorer", group = "launcher"}),
     awful.key({ modkey }, "i", function () awful.spawn(editor_cmd .. ' ' .. awesome.conffile) end,
               {description = "open config file", group = "launcher"}),
+    -- awful.key({ modkey }, "p", function() menubar.show() end,
+    --           {description = "show the menubar", group = "launcher"}),
+    awful.key({ modkey }, "p", function() awful.spawn(app_laucher) end,
+              {description = "show the menubar", group = "launcher"}),
+    -- awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
+    --           {description = "run prompt", group = "launcher"}),
+    awful.key({ modkey }, "r", function () awful.spawn(run_laucher) end,
+              {description = "run prompt", group = "launcher"}),
+    awful.key({ modkey }, "c", function () awful.spawn(calc_launcher) end,
+              {description = "open calculator", group = "launcher"}),
+    awful.key({ modkey }, ".", function () awful.spawn(emoji_laucher) end,
+              {description = "open calculator", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
@@ -303,10 +322,6 @@ local globalkeys = gears.table.join(
               end,
               {description = "restore minimized", group = "client"}),
 
-    -- Prompt
-    awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
-              {description = "run prompt", group = "launcher"}),
-
     awful.key({ modkey }, "x",
               function ()
                   awful.prompt.run {
@@ -316,10 +331,7 @@ local globalkeys = gears.table.join(
                     history_path = awful.util.get_cache_dir() .. "/history_eval"
                   }
               end,
-              {description = "lua execute prompt", group = "awesome"}),
-    -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "lua execute prompt", group = "awesome"})
 )
 
 local clientkeys = gears.table.join(

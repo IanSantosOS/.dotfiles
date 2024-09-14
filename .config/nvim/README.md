@@ -50,6 +50,15 @@ Package Manager > <https://github.com/folke/lazy.nvim>
 - folke/zen-mode.nvim -> codar no nvim sem distração
 - m4xshen/hardtime.nvim -> desabilita certas funções para tirar seus mals habitos no neovim
 - tris203/precognition.nvim -> mostra dicas de navegação
+- oil.nvim
+- mini.hipatterns
+- inc-rename.nvim
+- refactoring.nvim
+- whichkey
+- vim-surround
+- nvim-notify
+- nvim-autopairs
+- folke/noice.nvim
 
 ## Setup
 
