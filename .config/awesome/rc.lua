@@ -23,18 +23,20 @@ local chosen_theme  = "zenburn"
 local modkey        = "Mod4"
 local altkey        = "Mod1"
 local browser       = "vivaldi"
+local screenshot    = "flameshot gui"
 local file_explorer = "pcmanfm"
 local terminal      = "wezterm"
-local window        = "rofi -show window"
-local run_laucher   = "rofi -show run"
+local clock         = "alacritty -e peaclock"
+local recorder      = "simplescreenrecorder"
+local window_search = "rofi -show window"
 local app_laucher   = "rofi -show drun"
 local calc_launcher = "rofi -show calc"
-local wifi_laucher  = "rofi -show drun"
+local calculator    = "kalk"
 local emoji_laucher = "rofimoji --hidden-descriptions " ..
                       "--selector-args='-theme ~/.config/rofi/emoji.rasi'"
 local editor        = os.getenv("EDITOR") or "nvim"
 local editor_cmd    = terminal .. " -e " .. editor
-local gui_editor    = ""
+-- local gui_editor    = ""
 
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 
@@ -224,7 +226,7 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 local globalkeys = gears.table.join(
-    awful.key({ modkey }, "s",      hotkeys_popup.show_help,    {description="show help", group="awesome"}),
+    awful.key({ modkey }, "/",      hotkeys_popup.show_help,    {description="show help", group="awesome"}),
     awful.key({ modkey }, "Left",   awful.tag.viewprev,         {description = "view previous", group = "tag"}),
     awful.key({ modkey }, "Right",  awful.tag.viewnext,         {description = "view next", group = "tag"}),
     awful.key({ modkey }, "Escape", awful.tag.history.restore,  {description = "go back", group = "tag"}),
@@ -268,26 +270,34 @@ local globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program
-    awful.key({ modkey }, "Return", function () awful.spawn(terminal) end,
+    awful.key({ modkey            }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey }, "b", function () awful.spawn(browser) end,
+    awful.key({ modkey            }, "b", function () awful.spawn(browser) end,
               {description = "open browser", group = "launcher"}),
-    awful.key({ modkey }, "e", function () awful.spawn(file_explorer) end,
+    awful.key({ modkey            }, "e", function () awful.spawn(file_explorer) end,
               {description = "open file explorer", group = "launcher"}),
-    awful.key({ modkey }, "i", function () awful.spawn(editor_cmd .. ' ' .. awesome.conffile) end,
+    awful.key({ modkey            }, "i", function () awful.spawn(editor_cmd .. ' ' .. awesome.conffile) end,
               {description = "open config file", group = "launcher"}),
     -- awful.key({ modkey }, "p", function() menubar.show() end,
     --           {description = "show the menubar", group = "launcher"}),
-    awful.key({ modkey }, "p", function() awful.spawn(app_laucher) end,
-              {description = "show the menubar", group = "launcher"}),
+    awful.key({ modkey            }, "p", function() awful.spawn(app_laucher) end,
+              {description = "open rofi drun", group = "launcher"}),
     -- awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
     --           {description = "run prompt", group = "launcher"}),
-    awful.key({ modkey }, "r", function () awful.spawn(run_laucher) end,
-              {description = "run prompt", group = "launcher"}),
-    awful.key({ modkey }, "c", function () awful.spawn(calc_launcher) end,
-              {description = "open calculator", group = "launcher"}),
+    awful.key({ modkey }, "r", function () awful.spawn(recorder) end,
+              {description = "open a simple recorder", group = "launcher"}),
+    awful.key({ modkey            }, "c", function () awful.spawn(calc_launcher) end,
+              {description = "open rofi calculator", group = "launcher"}),
+    awful.key({ modkey, "Control" }, "c", function () awful.spawn(calculator) end,
+              {description = "open rofi calculator", group = "launcher"}),
     awful.key({ modkey }, ".", function () awful.spawn(emoji_laucher) end,
-              {description = "open calculator", group = "launcher"}),
+              {description = "open rofi emoji", group = "launcher"}),
+    awful.key({ modkey, "Control" }, "w", function () awful.spawn(window_search) end,
+              {description = "open rofi window", group = "launcher"}),
+    awful.key({ modkey,           }, "ç", function () awful.spawn(clock) end,
+              {description = "open clock", group = "launcher"}),
+    awful.key({ modkey, "Shift"   }, "s", function () awful.spawn(screenshot) end,
+              {description = "open the screenshot menu", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
@@ -351,6 +361,11 @@ local clientkeys = gears.table.join(
               {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
+    awful.key({ modkey, "Control"   }, "t",
+        function (c)
+            client.focus.sticky = not client.focus.sticky
+        end,
+        {description = "toggle sticky focus", group = "client"}),
     awful.key({ modkey,           }, "n",
         function (c)
             -- The client currently has the input focus, so it cannot be
@@ -476,6 +491,9 @@ awful.rules.rules = {
           "Kruler",
           "MessageWin",  -- kalarm.
           "Sxiv",
+          "kalk",
+          "kwrite",
+          "pcmanfm",
           "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
           "Wpa_gui",
           "veromix",
@@ -492,6 +510,24 @@ awful.rules.rules = {
           -- "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
         }
       }, properties = { floating = true }},
+
+      { rule = { class = "Alacritty" },
+        properties = {
+            floating = true,
+            ontop = true,
+            height = 185,
+            width = 625,
+            sticky = true,
+        }
+      },
+
+      { rule = { name = "SimpleScreenRecorder" },
+        properties = {
+            floating = true,
+            ontop = true,
+            sticky = true,
+        }
+      }
 
     -- Add titlebars to normal clients and dialogs
     -- { rule_any = {type = { "normal", "dialog" }
@@ -575,6 +611,7 @@ end)
 
 -- Autostart
 awful.spawn.with_shell("picom")
+-- awful.spawn.with_shell("nitrogen")
 awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("flameshot")
 

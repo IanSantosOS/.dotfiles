@@ -1,0 +1,23 @@
+timer '1h:00:00
+timer '01h:00m:00s'
+q
+timer-exec 01h:00m:00s
+timer 01h:00m:00s
+date '%A - %d/%m/%Y'
+date '%j days - %A - %d/%m/%Y'
+date '%j days - %A - %d/%m/%Y'
+date '%j - %A - %d/%m/%Y'
+timer 1h:0m:0s
+timer 2h
+timer 1h
+data '%j - %A - %d/%m;%Y'
+date '%j - %A - %d/%m/%Y'
+timer 1g
+timer 1h
+date '%j - %A - %d/%m/%Y'
+timer 1h
+date '%R - %j days - %A - %d/%m/%Y'
+timer 1h
+timer 1h
+timer 1h
+date '%R - %j days - %A - %d/%m/%Y'
