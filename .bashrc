@@ -26,7 +26,12 @@ alias ip='ip -c'
 
 alias clockdvd='tty-clock -Sbra 75000000 -d 0'
 # alias clock='tty-clock -Scbs'
-alias clock='\peaclock'
+alias clock='peaclock'
+
+alias matrix='neo-matrix'
+
+alias actually="cowsay -f actually 'Ummm... Actually... '"
+alias nerd='cowsay -f actually'
 
 alias dotfiles='/usr/bin/git --git-dir=/home/kaio/.dotfiles --work-tree=/home/kaio'
 alias dts='/usr/bin/git --git-dir=/home/kaio/.dotfiles --work-tree=/home/kaio'
@@ -38,6 +43,7 @@ alias cls='clear'
 
 alias v='vim'
 alias n='nvim'
+alias vi='nvim'
 alias nano='micro'
 alias evim='vim -yc "imap <C-S-q> <Esc>:q!<CR>"'
 # alias nano='vim -yc "imap <C-S-q> <Esc>:q!<CR>"'
@@ -58,3 +64,5 @@ function colormap() {
 }
 
 export QT_QPA_PLATFORMTHEME=qt6ct
+
+fastfetch

@@ -34,6 +34,7 @@ local calc_launcher = "rofi -show calc"
 local calculator    = "kalk"
 local emoji_laucher = "rofimoji --hidden-descriptions " ..
                       "--selector-args='-theme ~/.config/rofi/emoji.rasi'"
+local screen_locker = "slock"
 local editor        = os.getenv("EDITOR") or "nvim"
 local editor_cmd    = terminal .. " -e " .. editor
 -- local gui_editor    = ""
@@ -247,6 +248,10 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"}, "k",
         function () awful.client.swap.byidx(-1) end,
         {description = "swap with previous client by index", group = "client"}),
+
+    awful.key({ modkey }, "s",
+        function () awful.spawn(screen_locker) end,
+        {description = "activate the screen locker", group = "screen"}),
 
     awful.key({ modkey, "Control" }, "j",
         function () awful.screen.focus_relative(1) end,
