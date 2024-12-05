@@ -30,6 +30,8 @@ alias clock='peaclock'
 
 alias matrix='neo-matrix'
 
+alias neofetch='fastfetch'
+
 alias actually="cowsay -f actually 'Ummm... Actually... '"
 alias nerd='cowsay -f actually'
 
