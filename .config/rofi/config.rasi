@@ -18,7 +18,7 @@ configuration {
 /*	cache-dir: ;*/
 	steal-focus: false;
 /*	dpi: -1;*/
-	hover-select: true;
+	hover-select: false;
 
     /*---------- Matching setting ----------*/
 	matching: "normal";
