@@ -4,8 +4,8 @@
 }
 
 .tab.tab-actions-right {
-  box-shadow: inset 0  10px 20px rgba(190, 190, 190, 0.1),
-              inset 0 -10px 35px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 10px 20px rgba(190, 190, 190, 0.1),
+    inset 0 -10px 35px rgba(0, 0, 0, 0.5);
 }
 
 /* Code canvas top shadow */
@@ -20,9 +20,14 @@
 }
 
 /* List item label name */
+.monaco-list.list_id_1 .monaco-list-row:hover .label-name,
 .monaco-list.list_id_1 .monaco-list-row.selected .label-name {
   color: #fff !important;
   opacity: 1 !important;
+}
+
+.monaco-list.list_id_1 .monaco-list-row:not(.selected):not(:hover) {
+  opacity: .75 !important;
 }
 
 /* File explorer action buttons */
@@ -34,8 +39,8 @@
 .monaco-tree .monaco-tree-row .label-name,
 .monaco-list .monaco-list-row .monaco-icon-label .label-name {
   font-family: var(--font-family) !important;
-  font-size: 14px !important;
   font-weight: 400 !important;
+  font-size: 14px !important;
 }
 
 /* Sidebar top shadow */
@@ -125,11 +130,6 @@
 /* Remove background for lists */
 .monaco-list-rows {
   background: transparent !important;
-}
-
-/* List hover */
-.monaco-list-row:hover {
-  background: rgba(0, 0, 0, .2) !important;
 }
 
 .notifications-toasts .monaco-list-row:hover {

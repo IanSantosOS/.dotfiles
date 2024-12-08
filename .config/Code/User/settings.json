@@ -1,15 +1,18 @@
 {
   // VS Code Settings
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font', 'JetBrainsMono Nerd Font', 'Caskaydia Cove Nerd Font', 'CommitMono Nerd Font', 'Hack Nerd Font', 'MesloLGL Nerd Font', Consolas, 'Courier New', monospace",
   "editor.fontFamily": "'FiraCode Nerd Font', 'JetBrainsMono Nerd Font', 'Caskaydia Cove Nerd Font', 'CommitMono Nerd Font', 'Hack Nerd Font', 'MesloLGL Nerd Font', Consolas, 'Courier New', monospace",
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "editor.gotoLocation.multipleImplementations": "goto",
   "editor.gotoLocation.multipleDeclarations": "goto",
   "editor.gotoLocation.multipleDefinitions": "goto",
   "editor.gotoLocation.multipleReferences": "goto",
   "terminal.integrated.hideOnStartup": "whenEmpty",
-  "workbench.panel.defaultLocation": "right",
+  "editor.cursorSmoothCaretAnimation": "explicit",
+  "workbench.panel.defaultLocation": "bottom", // "bottom" or "right"
+  "workbench.activityBar.location": "default", // "top", "bottom" or "default"
   "window.customTitleBarVisibility": "auto",
-  "workbench.activityBar.location": "top",
   "editor.multiCursorModifier": "ctrlCmd",
   "window.newWindowDimensions": "inherit",
   "workbench.editor.showTabs": "multiple",
@@ -18,6 +21,7 @@
   "editor.renderLineHighlight": "all",
   "editor.lightbulb.enabled": "off",
   "workbench.startupEditor": "none",
+  "editor.cursorBlinking": "smooth",
   "window.titleBarStyle": "custom",
   "editor.lineNumbers": "relative",
   "files.autoSave": "afterDelay",
@@ -27,14 +31,16 @@
   "explorer.autoReveal": false,
   "search.useIgnoreFiles": false,
   "editor.minimap.enabled": false,
-  "explorer.compactFolders": true,
+  "explorer.compactFolders": true, // Compact Folders
   "files.trimFinalNewlines": true,
   "zenMode.hideLineNumbers": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
+  "explorer.confirmDragAndDrop": false,
   "editor.minimap.renderCharacters": false,
+  "extensions.ignoreRecommendations": true,
   "terminal.integrated.enableImages": true,
   "editor.guides.bracketPairsHorizontal": false,
   "editor.bracketPairColorization.enabled": false,
@@ -43,20 +49,33 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "workbench.layoutControl.enabled": false,
   "workbench.editor.enablePreview": false,
+  "workbench.editor.limit.enabled": true,
+  "workbench.statusBar.visible": false,
   "workbench.enableExperiments": false,
   "editor.stickyScroll.enabled": false,
   "diffEditor.renderSideBySide": false,
+  "editor.overviewRulerBorder": false,
+  "workbench.panel.showLabels": false,
   "editor.guides.bracketPairs": true,
   "editor.guides.indentation": true,
+  "editor.detectIndentation": false,
   "workbench.tips.enabled": false,
   "window.commandCenter": false,
   "breadcrumbs.enabled": false,
+  "editor.formatOnSave": true,
   "editor.scrollbar.verticalScrollbarSize": 12,
+  "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.fontSize": 14,
+  "workbench.editor.limit.value": 5,
   "editor.hover.hidingDelay": 450,
+  "workbench.tree.indent": 16,
   "editor.padding.top": 10,
   "editor.lineHeight": 1.8,
   "editor.fontSize": 14,
-  "editor.rulers": [80, 120],
+  "editor.rulers": [
+    80,
+    120
+  ],
   "files.associations": {
     ".env*": "dotenv"
   },
@@ -70,7 +89,8 @@
   "explorer.fileNesting.patterns": {
     "package.json": "eslint*, package-lock*, tsconfig*, vite*, prettier*",
     "tailwind.config*": "tailwind.config*, postcss.config*",
-    ".env*": ".env*"
+    ".env.local": ".env*",
+    ".env": ".env*",
   },
   "[css]": {
     "editor.tabSize": 2,
@@ -84,11 +104,25 @@
   "[jsonl]": {
     "editor.tabSize": 2,
   },
-
+  "workbench.colorCustomizations": {
+    "[Omni]": {
+      "editorSuggestWidget.selectedBackground": "#231739",
+      "list.inactiveSelectionBackground": "#231739",
+      "list.activeSelectionBackground": "#231739",
+      "list.focusBackground": "#231739",
+      "list.hoverBackground": "#231739",
+      "list.dropBackground": "#231739"
+    },
+  },
   // Extensions Settings Related
   "workbench.iconTheme": "symbols",
+  "workbench.colorTheme": "Omni",
+  "symbols.hidesExplorerArrows": true,
+  "catppuccin-icons.hidesExplorerArrows": true,
+  "material-icon-theme.hidesExplorerArrows": true,
   "find-it-faster.general.useTerminalInEditor": true,
   "dotenv.enableAutocloaking": false,
+  "liveServer.settings.port": 8080,
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
@@ -109,10 +143,10 @@
   "easy-codesnap.shutterAction": "copy",
   "easy-codesnap.roundingLevel": 4,
   "easy-codesnap.highlightLineNumber": true,
-
   "vscode_custom_css.imports": [
+    // Alter these paths to your files
     "file:///home/kaio/.config/Code/User/custom/style.css",
     "file:///home/kaio/.config/Code/User/custom/script.js",
+    "file:///home/kaio/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
   ],
-  "workbench.colorTheme": "Omni",
 }
