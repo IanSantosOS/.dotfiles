@@ -1,43 +1,118 @@
 {
+  // VS Code Settings
   "editor.fontFamily": "'FiraCode Nerd Font', 'JetBrainsMono Nerd Font', 'Caskaydia Cove Nerd Font', 'CommitMono Nerd Font', 'Hack Nerd Font', 'MesloLGL Nerd Font', Consolas, 'Courier New', monospace",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleReferences": "goto",
   "terminal.integrated.hideOnStartup": "whenEmpty",
   "workbench.panel.defaultLocation": "right",
+  "window.customTitleBarVisibility": "auto",
+  "workbench.activityBar.location": "top",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "window.newWindowDimensions": "inherit",
+  "workbench.editor.showTabs": "multiple",
   "workbench.sideBar.location": "right",
+  "editor.occurrencesHighlight": "off",
   "editor.renderLineHighlight": "all",
+  "editor.lightbulb.enabled": "off",
+  "workbench.startupEditor": "none",
+  "window.titleBarStyle": "custom",
   "editor.lineNumbers": "relative",
   "files.autoSave": "afterDelay",
-  "zenMode.hideLineNumbers": false,
   "zenMode.showTabs": "none",
   "editor.linkedEditing": true,
   "editor.fontLigatures": true,
+  "explorer.autoReveal": false,
+  "search.useIgnoreFiles": false,
   "editor.minimap.enabled": false,
   "explorer.compactFolders": true,
+  "files.trimFinalNewlines": true,
+  "zenMode.hideLineNumbers": false,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
   "editor.minimap.renderCharacters": false,
   "terminal.integrated.enableImages": true,
   "editor.guides.bracketPairsHorizontal": false,
   "editor.bracketPairColorization.enabled": false,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "workbench.tree.enableStickyScroll": false,
+  "diffEditor.ignoreTrimWhitespace": false,
   "workbench.layoutControl.enabled": false,
+  "workbench.editor.enablePreview": false,
   "workbench.enableExperiments": false,
+  "editor.stickyScroll.enabled": false,
+  "diffEditor.renderSideBySide": false,
   "editor.guides.bracketPairs": true,
+  "editor.guides.indentation": true,
+  "workbench.tips.enabled": false,
   "window.commandCenter": false,
-  "editor.padding.top": 10,
-  "editor.fontSize": 14,
+  "breadcrumbs.enabled": false,
   "editor.scrollbar.verticalScrollbarSize": 12,
+  "editor.hover.hidingDelay": 450,
+  "editor.padding.top": 10,
+  "editor.lineHeight": 1.8,
+  "editor.fontSize": 14,
+  "editor.rulers": [80, 120],
   "files.associations": {
     ".env*": "dotenv"
   },
-
-  "workbench.colorTheme": "Omni",
-  "workbench.iconTheme": "material-icon-theme",
-  "dotenv.enableAutocloaking": false,
-  "markdownlint.config": {
-    "MD033": false,
-    "MD034": false
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/package-lock.json": true,
   },
   "editor.tokenColorCustomizations": {
     "textMateRules": []
   },
+  "explorer.fileNesting.patterns": {
+    "package.json": "eslint*, package-lock*, tsconfig*, vite*, prettier*",
+    "tailwind.config*": "tailwind.config*, postcss.config*",
+    ".env*": ".env*"
+  },
+  "[css]": {
+    "editor.tabSize": 2,
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+  },
+  "[jsonc]": {
+    "editor.tabSize": 2,
+  },
+  "[jsonl]": {
+    "editor.tabSize": 2,
+  },
+
+  // Extensions Settings Related
+  "workbench.iconTheme": "symbols",
+  "find-it-faster.general.useTerminalInEditor": true,
+  "dotenv.enableAutocloaking": false,
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "markdownlint.config": {
+    "MD033": false,
+    "MD034": false
+  },
+  "easy-codesnap.backgroundColor": "#52158e",
+  "easy-codesnap.boxShadow": "rgba(0, 0, 0, 0.78) 0px 20px 68px",
+  "easy-codesnap.containerPadding": "3em",
+  "easy-codesnap.roundedCorners": true,
+  "easy-codesnap.showWindowControls": true,
+  "easy-codesnap.showWindowTitle": false,
+  "easy-codesnap.showLineNumbers": true,
+  "easy-codesnap.realLineNumbers": false,
+  "easy-codesnap.transparentBackground": true,
+  "easy-codesnap.target": "container",
+  "easy-codesnap.shutterAction": "copy",
+  "easy-codesnap.roundingLevel": 4,
+  "easy-codesnap.highlightLineNumber": true,
+
+  "vscode_custom_css.imports": [
+    "file:///home/kaio/.config/Code/User/custom/style.css",
+    "file:///home/kaio/.config/Code/User/custom/script.js",
+  ],
+  "workbench.colorTheme": "Omni",
 }

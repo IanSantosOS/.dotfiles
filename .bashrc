@@ -66,5 +66,3 @@ function colormap() {
 }
 
 export QT_QPA_PLATFORMTHEME=qt6ct
-
-fastfetch

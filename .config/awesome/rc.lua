@@ -508,6 +508,8 @@ awful.rules.rules = {
         -- and the name shown there might not match defined rules here.
         name = {
           "Event Tester",  -- xev.
+          "Picture in picture",
+          "Enhancer for YouTube™ - Vivaldi",
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.

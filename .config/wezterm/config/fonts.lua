@@ -2,12 +2,12 @@ local wezterm = require('wezterm')
 
 local font_family = {
     --[[ 1 ]] 'FiraCode Nerd Font',
-    --[[ 2 ]] 'Caskaydia Cove Nerd Font',
-    --[[ 3 ]] 'JetBrainsMono Nerd Font',
-    --[[ 4 ]] 'Agave Nerd Font',
-    --[[ 5 ]] 'CommitMono Nerd Font',
-    --[[ 6 ]] 'Hack Nerd Font',
-    --[[ 7 ]] 'MesloLGL Nerd Font',
+    -- --[[ 2 ]] 'Caskaydia Cove Nerd Font',
+    -- --[[ 3 ]] 'JetBrainsMono Nerd Font',
+    -- --[[ 4 ]] 'Agave Nerd Font',
+    -- --[[ 5 ]] 'CommitMono Nerd Font',
+    -- --[[ 6 ]] 'Hack Nerd Font',
+    -- --[[ 7 ]] 'MesloLGL Nerd Font',
 
     --[[ X ]] 'HanaMinA',
     --[[ X ]] 'Noto Sans CJK SC',
