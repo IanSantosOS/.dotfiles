@@ -1,5 +1,7 @@
 {
+  //============================================================================
   // VS Code Settings
+  //============================================================================
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font', 'JetBrainsMono Nerd Font', 'Caskaydia Cove Nerd Font', 'CommitMono Nerd Font', 'Hack Nerd Font', 'MesloLGL Nerd Font', Consolas, 'Courier New', monospace",
   "editor.fontFamily": "'FiraCode Nerd Font', 'JetBrainsMono Nerd Font', 'Caskaydia Cove Nerd Font', 'CommitMono Nerd Font', 'Hack Nerd Font', 'MesloLGL Nerd Font', Consolas, 'Courier New', monospace",
   "editor.formatOnSaveMode": "modificationsIfAvailable",
@@ -42,7 +44,7 @@
   "editor.minimap.renderCharacters": false,
   "extensions.ignoreRecommendations": true,
   "terminal.integrated.enableImages": true,
-  "editor.guides.bracketPairsHorizontal": false,
+  "editor.guides.bracketPairsHorizontal": false, // Addition to Indentation Guides Color Bracket
   "editor.bracketPairColorization.enabled": false,
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "workbench.tree.enableStickyScroll": false,
@@ -56,17 +58,17 @@
   "diffEditor.renderSideBySide": false,
   "editor.overviewRulerBorder": false,
   "workbench.panel.showLabels": false,
-  "editor.guides.bracketPairs": true,
-  "editor.guides.indentation": true,
-  "editor.detectIndentation": false,
+  "editor.guides.bracketPairs": false, // Indentation Guides Color Bracket
+  "editor.guides.indentation": true, // Indentation Guides
+  "editor.detectIndentation": false, // Detect Indentation
   "workbench.tips.enabled": false,
-  "window.commandCenter": false,
+  "window.commandCenter": true,
   "breadcrumbs.enabled": false,
   "editor.formatOnSave": true,
   "editor.scrollbar.verticalScrollbarSize": 12,
   "terminal.integrated.lineHeight": 1.2,
   "terminal.integrated.fontSize": 14,
-  "workbench.editor.limit.value": 5,
+  "workbench.editor.limit.value": 10,
   "editor.hover.hidingDelay": 450,
   "workbench.tree.indent": 16,
   "editor.padding.top": 10,
@@ -106,15 +108,18 @@
   },
   "workbench.colorCustomizations": {
     "[Omni]": {
-      "editorSuggestWidget.selectedBackground": "#231739",
-      "list.inactiveSelectionBackground": "#231739",
-      "list.activeSelectionBackground": "#231739",
-      "list.focusBackground": "#231739",
-      "list.hoverBackground": "#231739",
-      "list.dropBackground": "#231739"
-    },
+      "editorSuggestWidget.selectedBackground": "#42142d",
+      "list.inactiveSelectionBackground": "#42142d",
+      "list.activeSelectionBackground": "#42142d",
+      "list.focusBackground": "#42142d",
+      "list.hoverBackground": "#42142d",
+      "list.dropBackground": "#42142d",
+      "menu.selectionBackground": "#45255f"
+    }
   },
+  //============================================================================
   // Extensions Settings Related
+  //============================================================================
   "workbench.iconTheme": "symbols",
   "workbench.colorTheme": "Omni",
   "symbols.hidesExplorerArrows": true,
@@ -147,6 +152,51 @@
     // Alter these paths to your files
     "file:///home/kaio/.config/Code/User/custom/style.css",
     "file:///home/kaio/.config/Code/User/custom/script.js",
+    // This path below was created automatically by the VSCode Animations Extension,
+    // remove this path and if you want animations, install the extension and it will
+    // create the right path automatically
     "file:///home/kaio/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
   ],
+  //============================================================================
+  // Neovim
+  //============================================================================
+  // - Alter this path to your neovim executable Path
+  // - Also remember to change the OS of this config, since this one is for
+  //   linux if you utilize Window or Mac the config will be different
+  // - If you are utilizing Windows WSL, set the config below to true and config
+  //   the path to use the Linux OS (not Windows)
+  // "vscode-neovim.useWSL": false, // WSL (Windows)
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim", // LINUX
+  // "vscode-neovim.neovimExecutablePaths.win32": "", // Windows
+  // "vscode-neovim.neovimExecutablePaths.darwin": "", // MacOS
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  /* "vscode-neovim.compositeKeys": {
+    "jj": {
+      "command": "vscode-neovim.escape",
+    },
+    "jk": {
+      // Use lua to execute any logic
+      "command": "vscode-neovim.lua",
+      "args": [
+        [
+          "local code = require('vscode')",
+          "code.action('vscode-neovim.escape')",
+          "code.action('workbench.action.files.save')",
+        ],
+      ],
+    },
+    "kj": {
+      // Use lua to execute any logic
+      "command": "vscode-neovim.lua",
+      "args": [
+        [
+          "local code = require('vscode')",
+          "code.action('vscode-neovim.escape')",
+          "code.action('workbench.action.files.save')",
+        ],
+      ],
+    },
+   } */
 }

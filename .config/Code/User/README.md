@@ -3,9 +3,8 @@
 Here I have my configs, keybindings and a list of extensions for VS Code.
 
 > [!NOTE]
-> If the custom styles and script files grow too large, consider splitting them into
-> separate, smaller files. This approach promotes better organization, improves code
-> readability, and simplifies maintenance.
+> If the custom styles and script files grow too large, consider splitting them
+> into separate, smaller files.
 
 ## Setup Requirements
 
@@ -19,7 +18,8 @@ Here I have my configs, keybindings and a list of extensions for VS Code.
 > sudo chown -R $(whoami) /opt/visual-studio-code/
 > ```
 >
-> After configuring your custom scripts or styles, restore the original permissions with:
+> After configuring your custom scripts or styles, if you want to restore the
+> original permissions do this:
 >
 > ```bash
 > sudo chown -R root /opt/visual-studio-code/
@@ -28,8 +28,8 @@ Here I have my configs, keybindings and a list of extensions for VS Code.
 ---
 
 > [!IMPORTANT]
-> To use custom scripts and styles, you need to set the absolute path in the `settings.json` file.
-> Add the following lines:
+> To use custom scripts and styles, you need to set the absolute path in the
+> `settings.json` file. Add the following lines:
 >
 > ```jsonc
 > "vscode_custom_css.imports": [
@@ -65,25 +65,53 @@ Extensions I use regularly.
         <li><a href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss">Tailwind CSS IntelliSense</a></li>
         <li><a href="https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client">Thunder Client</a></li>
         <li><a href="https://marketplace.visualstudio.com/items?itemName=BriteSnow.vscode-toggle-quotes">Toggle Quotes</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim">Vim</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=AndenetAlexander.vim-cheatsheet">Vim Cheatsheet</a></li>
         <li><a href="https://marketplace.visualstudio.com/items?itemName=vintharas.learn-vim">Learn Vim</a></li>
+        <li><a href="https://marketplace.visualstudio.com/items?itemName=AndenetAlexander.vim-cheatsheet">Vim Cheatsheet</a></li>
+        <li><a href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim">Vim</a> - or this, or the vscode neovim extension.</li>
+        <li><a href="https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim">VSCode Neovim</a> - or this, or the vim extension.</li>
     </ul>
 </details>
 
 <details>
     <summary>CANDY</summary>
     <ul>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc-pack">Catppuccin Pack</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight">Color Highlight</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=be5invis.vscode-custom-css">Custom CSS and JS Loader</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=ArthurLobo.easy-codesnap">Easy CodeSnap</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview">Image preview</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme">Material Icon Theme</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=miguelsolorio.min-theme">Min Theme</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=rocketseat.theme-omni">Omni Theme</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=miguelsolorio.symbols">Symbols</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=BrandonKirbyson.vscode-animations">VSCode Animations</a></li>
+        <li>[Other] <a href="https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight">Color Highlight</a></li>
+        <li>[Other] <a href="https://marketplace.visualstudio.com/items?itemName=be5invis.vscode-custom-css">Custom CSS and JS Loader</a></li>
+        <li>[Other] <a href="https://marketplace.visualstudio.com/items?itemName=ArthurLobo.easy-codesnap">Easy CodeSnap</a></li>
+        <li>[Other] <a href="https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview">Image preview</a></li>
+        <li>[Other] <a href="https://marketplace.visualstudio.com/items?itemName=BrandonKirbyson.vscode-animations">VSCode Animations</a></li>
+        <li>[Icons] <a href="https://marketplace.visualstudio.com/items?itemName=BeardedBear.beardedicons">Bearded Icons</a></li>
+        <li>[Icons] <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme">Material Icon Theme</a></li>
+        <li>[Icons] <a href="https://marketplace.visualstudio.com/items?itemName=miguelsolorio.symbols">Symbols</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=alexnho.a-touch-of-lilac-theme">A Touch of Lilac Theme</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=spaceinvadev.alternight">AlterNight</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=wart.ariake-dark">Ariake Dark</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=akamud.vscode-theme-onedark">Atom One Dark Theme</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=akamud.vscode-theme-onelight">Atom One Light Theme</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=teabyii.ayu">Ayu</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=BeardedBear.beardedtheme">Bearded THeme</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc-pack">Catppuccin Pack</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=mcagampan.dark-horizon">Dark Horizon</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula">Dracula Theme Official</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=ankitcode.firefly">FireFly Pro</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=hiukky.flate">Flate</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=sdras.inbedby7pm"">In Bed By 7pm</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=qufiwefefwoyn.kanagawa">Kanagawa</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=merko.merko-green-theme">Merko's Green Theme</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=miguelsolorio.min-theme">Min Theme</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=monokai.theme-monokai-pro-vscode">Monokai Pro</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=atomiks.moonlight">Moonlight</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=sdras.night-owl">Night Owl</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=arcticicestudio.nord-visual-studio-code">Nord</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=rocketseat.theme-omni">Omni Theme</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme">One Dark Pro</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=tinkertrain.theme-panda">Panda Theme</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=pmndrs.pmndrs">Poimandres</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=jaccon.punk-dark-theme">Punk Dark Theme</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=barrsan.reui">ReUI</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=wicked-labs.wvsc-serendipity">Serendipity</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night">Tokyo Night</a></li>
+        <li>[Theme] <a href="https://marketplace.visualstudio.com/items?itemName=antfu.theme-vitesse">Vitesse Theme</a></li>
     </ul>
 </details>
 

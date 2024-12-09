@@ -20,20 +20,7 @@
             "  \"key\": \"$1\",",
             "  \"command\": \"$2\",",
             "  \"when\": \"$3\"",
-            "}${0}",
+            "}${0}"
         ]
     },
-    "Create a Snippet": {
-        "description": "Snippet responsible for creating snippets in the configuration of VS Code.",
-        "prefix": "snp",
-        "body": [
-            "\"$1\": {",
-            "    \"description\": \"$2\",",
-            "    \"prefix\": \"$3\",",
-            "    \"body\": [",
-            "        \"$4\"",
-            "    ]",
-            "}${0}",
-        ]
-    }
 }
