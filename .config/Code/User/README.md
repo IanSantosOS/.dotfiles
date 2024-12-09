@@ -146,6 +146,6 @@ Extensions I use regularly.
 
 ### Inspiration
 
-- [Glenn Raya - Customizing your VSCode](https://www.youtube.com/watch?v=9_I0bySQoCs)
+- [Glenn Raya | Transforming VS Code: Beyond Themes! — Make VS Code Unrecognizable!](https://www.youtube.com/watch?v=9_I0bySQoCs)
 - [Igor Babko | My VS Code Setup](https://www.youtube.com/playlist?list=PLXDouhCU5r6q10ef9yXxzY4GwVpAQMvsZ)
 - [Igor Babko | My VS Code Keybindings](https://www.youtube.com/playlist?list=PLXDouhCU5r6q0XQ-njGmDqA3LVA04Io5D)
