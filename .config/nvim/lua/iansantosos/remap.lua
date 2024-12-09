@@ -12,6 +12,10 @@ vim.keymap.set({ "n", "v" }, "<leader>/", "<ESC>:let @/=''<CR>", { silent = true
 vim.keymap.set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>sS", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left><Left>]])
 
+vim.keymap.set("i", "jj", "<ESC>");
+vim.keymap.set("i", "jk", "<ESC>:update<CR>");
+vim.keymap.set("i", "kj", "<ESC>:update<CR>");
+
 vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<ESC>:update<CR>", { desc = "Salva o arquivo utilizando :update" })
 
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Junta a linha atual com a linha de baixo mantendo o cursor na posição original" })
