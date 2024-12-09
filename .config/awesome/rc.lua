@@ -42,6 +42,27 @@ local editor_cmd    = terminal .. " -e " .. editor
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 
 beautiful.init("~/.config/awesome/themes/" .. chosen_theme .. "/theme.lua")
+
+local brightness_widget = wibox.widget {
+    widget = wibox.widget.textbox,
+    align  = 'center',
+    valign = 'center',
+}
+
+local update_brightness = function()
+    awful.spawn.easy_async_with_shell("brightnessctl g", function(stdout)
+        local brightness = tonumber(stdout) / 255 * 100
+        brightness_widget.text = "☀️ " .. math.floor(brightness) .. "%"
+    end)
+end
+
+update_brightness()
+
+gears.timer {
+    timeout   = 10,
+    autostart = true,
+    callback  = update_brightness
+}
 -- }}}
 
 -- {{{ Error handling
@@ -209,6 +230,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             -- awful.widget.keyboardlayout(),
+            brightness_widget,
             wibox.widget.systray(),
             wibox.widget.textclock(),
             s.mylayoutbox,
@@ -307,6 +329,11 @@ local globalkeys = gears.table.join(
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
+
+    awful.key({ }, "XF86MonBrightnessUp",   function() awful.spawn("brightnessctl set +5%")  end,
+              {description = "Increase brightness in 5%", group = "brightness"}),
+    awful.key({ }, "XF86MonBrightnessDown", function() awful.spawn("brightnessctl set 5%-")  end,
+              {description = "Decrease brightness in 5%", group = "brightness"}),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
