@@ -12,14 +12,20 @@
     // 	],
     // 	"description": "Log output to console"
     // }
-    "Create a keybinding": {
-        "description": "Snippet responsible for creating keybinding shortcuts in the keybindings.json config of VS Code.",
-        "prefix": "key",
+    "Initial CSS": {
+        "description": "Creates a initial css header",
+        "prefix": "css",
         "body": [
-            "{",
-            "  \"key\": \"$1\",",
-            "  \"command\": \"$2\",",
-            "  \"when\": \"$3\"",
+            "* {",
+            "  margin: 0;",
+            "  padding: 0;",
+            "  box-sizing: border-box;",
+            "}",
+            "",
+            "html,",
+            "body {",
+            "  width: 100%;",
+            "  height: 100%;",
             "}${0}"
         ]
     }

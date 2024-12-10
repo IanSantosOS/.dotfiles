@@ -1,13 +1,13 @@
 /* Variables */
 :root {
-  --font-family: 'Hack Nerd Font', 'Geist Mono', monospace;
+  --font-family: 'Hack Nerd Font', 'MesloLGL Nerd Font', 'Geist Mono', Consolas, 'Courier New', monospace;
 }
 
 /* 3D effect on the Active Tab */
-.tab.tab-actions-right {
+/* .tab.tab-actions-right {
   box-shadow: inset 0 10px 20px rgba(190, 190, 190, 0.1),
     inset 0 -10px 35px rgba(0, 0, 0, 0.25);
-}
+} */
 
 /* Code canvas top shadow */
 .monaco-editor .scroll-decoration {
@@ -136,10 +136,14 @@
   border-radius: 12px !important;
   padding: 8px !important;
   border: none !important;
-  background-color: rgba(34, 34, 34, .40) !important;
+  background-color: rgba(34, 34, 34, 0) !important;
   font-family: var(--font-family) !important;
   font-size: 14px !important;
   margin-bottom: 16px !important;
+}
+
+.quick-input-filter .controls {
+  display: none !important;
 }
 
 #command-blur {
@@ -150,11 +154,6 @@
   top: 0;
   left: 0;
   backdrop-filter: blur(8px);
-}
-
-/* Command palette's input box placeholder. */
-.monaco-inputbox input::placeholder {
-  color: rgba(255, 255, 255, .3) !important;
 }
 
 /* Container that holds the VS Code home icon. */
