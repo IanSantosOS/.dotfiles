@@ -537,6 +537,7 @@ awful.rules.rules = {
           "Event Tester",  -- xev.
           "Picture in picture",
           "Enhancer for YouTube™ - Vivaldi",
+          "Bitwarden - Vivaldi"
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
