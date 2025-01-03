@@ -22,7 +22,8 @@ alias grep='grep --color'
 alias fgrep='fgrep --color'
 alias egrep='egrep --color'
 
-alias ip='ip -c'
+alias ip='\ip -c'
+alias ipa='\ip -c addr'
 
 alias clockdvd='tty-clock -Sbra 75000000 -d 0'
 # alias clock='tty-clock -Scbs'
@@ -42,6 +43,7 @@ alias dfs='/usr/bin/git --git-dir=/home/kaio/.dotfiles --work-tree=/home/kaio'
 alias cd..='cd ..'
 
 alias cls='clear'
+alias c='clear'
 
 alias v='vim'
 alias n='nvim'
@@ -52,6 +54,7 @@ alias evim='vim -yc "imap <C-S-q> <Esc>:q!<CR>"'
 
 alias bashrc='nvim ~/.bashrc'
 alias bs='nvim ~/.bashrc'
+alias s='source ~/.bashrc'
 
 alias pac='sudo pacman'
 
@@ -64,5 +67,8 @@ function colormap() {
     printf "\x1b[0m"
     echo 
 }
+
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+eval "$(starship init bash)"
 
 export QT_QPA_PLATFORMTHEME=qt6ct

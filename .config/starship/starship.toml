@@ -1,0 +1,289 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+#=====================================
+# Format
+#=====================================
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# format = '$all'
+
+format = """
+(($username)(@$hostname)($container)($localip)\n)\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$fossil_branch\
+$fossil_metrics\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$fill\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$gleam\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$quarto\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$nats\
+$direnv\
+$env_var\
+$crystal\
+$line_break\
+$sudo\
+$cmd_duration\
+$jobs\
+$battery\
+$time\
+$status\
+$os\
+$shell\
+$character"""
+
+# right_format = ""
+
+[character]
+success_symbol = '[❯](bold green)' # or '➜ '
+error_symbol = '[✗](bold red)'
+
+[directory]
+truncation_length = 2
+truncation_symbol = '../'
+read_only = " " # '🔒'
+
+[directory.substitutions]
+'Documents' = '󰈙'
+'Downloads' = ' '
+'Music' = ' '
+'Pictures' = ' '
+
+#=====================================
+# Miscellaneous
+#=====================================
+
+[battery]
+disabled = true
+
+[cmd_duration]
+min_time = 5000
+format = "[$duration]($style) "
+
+[hostname]
+ssh_only = true
+format = '[$hostname]($style)'
+
+[localip]
+ssh_only = false
+disabled = true
+
+[pijul_channel]
+disabled = false
+
+[shell]
+disabled = true
+bash_indicator = ""
+fish_indicator = "󰈺"
+zsh_indicator  = ""
+nu_indicator   = "nu"
+cmd_indicator  = ""
+powershell_indicator = "󰨊"
+
+[username]
+show_always = false
+format = '[$user]($style)'
+
+#=====================================
+# Git
+#=====================================
+
+[git_branch]
+symbol = " " # ' '
+
+# [git_state]
+# style = "bold red"
+# format = "[$state( $progress_current/$progress_total) ]($style)"
+# rebase = "rebase"
+# merge = "merge"
+# revert = "revert"
+# cherry_pick = "cherry"
+# bisect = "bisect"
+# am = "am"
+# am_or_rebase = "am/rebase"
+
+[git_status]
+format = '([\[$all_status $ahead_behind\]]($style) )'
+stashed = "[${count}*](green)"
+modified = "[${count}+](yellow)"
+deleted = "[${count}-](red)"
+conflicted = "[${count}~](red)"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+untracked = "[${count}?](blue)"
+staged = "[${count}+](green)"
+up_to_date = '[✓](bold green)'
+
+#=====================================
+# OS
+#=====================================
+
+[os]
+disabled = false
+
+[os.symbols]
+Android =          "[ ](bold green)"
+Arch =             "[ ](bold blue)"
+EndeavourOS =      "[ ](bold blue)"
+Fedora =           " " # ' '
+Gentoo =           " "
+Kali =             " "
+Linux =            " "
+Macos =            " "
+Manjaro =          "[ ](bold green)"
+Mint =             "[󰣭 ](bold green)"
+NixOS =            "[ ](bold cyan)"
+openSUSE =         "[ ](bold green)"
+Pop =              "[ ](bold fg:#77b0bb)"
+Raspbian =         " "
+Redhat =           "[󱄛 ](bold red)"
+RedHatEnterprise = "[󱄛 ](bold red)"
+SUSE =             "[ ](bold green)"
+Ubuntu =           "[ ](bold red)"
+Unknown =          ""
+Void =             "[ ](bold #74867B)"
+Windows =          "[ ](bold blue)"
+
+#=====================================
+# Languages
+#=====================================
+
+[aws]
+symbol = "󰸏 " # ' ', '☁  '
+
+[conda]
+symbol = " " # '🅒 ', '🐍 '
+
+[container]
+symbol = " " # ' ', '⬢', '📦 '
+
+[dart]
+symbol = " " # '🎯 '
+
+[docker_context]
+symbol = "󰡨 " # ' ', '🐳 '
+
+[elixir]
+symbol = "  " # ' ', ' ', '💧 '
+
+[elm]
+symbol = " " # '🌳 '
+
+[gcloud]
+symbol = "󱇶 " # ' ', '☁  '
+
+[golang]
+symbol = " " # ' ', '󰟓 ', '🐹 '
+
+[java]
+symbol = " " # ' ', '󰅶 ', '☕ '
+
+[julia]
+symbol = " " # 'ஃ '
+
+[lua]
+symbol = " " # ' ', '🌙 '
+
+[haskell]
+symbol = " " # '󰘧 ', 'λ '
+
+[memory_usage]
+symbol = "󰍛 "
+
+[nim]
+symbol = " " # '󰆥 ', '󱇐 ', '󱟜 ', '👑 '
+
+[nodejs]
+format = '[$symbol($version )]($style)'
+
+[nix_shell]
+symbol = " " # ' ', '❄ '
+
+[perl]
+symbol = " " # '🐪 '
+
+[php]
+symbol = " " # ' ', '󰌟 ', '🐘 '
+
+[python]
+symbol = " " # '🐍 '
+format = '[${symbol}(${version} )(\($virtualenv\) )]($style)'
+
+[ruby]
+symbol = " " # ' ', ' ', ' ', ' ', '󰴭 ', '💎 '
+
+[rust]
+symbol = " " # '🦀 '
+
+[scala]
+symbol = " " # '🆂 '
+
+[shlvl]
+disabled = false
+symbol = " " # ' ', '↕ '
