@@ -1,0 +1,9 @@
+[submodule ".config/Code"]
+	path = .config/Code
+	url = https://github.com/IanSantosOS/.code
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = https://github.com/IanSantosOS/.nvim
+[submodule ".config/tmux"]
+	path = .config/tmux
+	url = https://github.com/IanSantosOS/.tmux
