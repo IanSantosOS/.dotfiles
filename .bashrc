@@ -27,7 +27,8 @@ alias ipa='\ip -c addr'
 
 alias clockdvd='tty-clock -Sbra 75000000 -d 0'
 # alias clock='tty-clock -Scbs'
-alias clock='peaclock'
+alias clock='peaclock --config-dir ~/.config/peaclock'
+alias peaclock='peaclock --config-dir ~/.config/peaclock'
 
 alias matrix='neo-matrix'
 
@@ -65,7 +66,7 @@ function colormap() {
         if [ "$d" -eq "0" ]; then echo ""; fi
     done;
     printf "\x1b[0m"
-    echo 
+    echo
 }
 
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
