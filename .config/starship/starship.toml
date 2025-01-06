@@ -229,6 +229,7 @@ symbol = " " # '🎯 '
 
 [docker_context]
 symbol = "󰡨 " # ' ', '🐳 '
+detect_extensions = ['dockerfile']
 
 [elixir]
 symbol = "  " # ' ', ' ', '💧 '
