@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h \W]\$ '
+PS1="[\u@\h \W]\$ "
 
 # alias ls='\ls -Noh --color --group-directories-first'
 # alias la='\ls -Noah --color --group-directories-first'
@@ -16,48 +16,48 @@ alias la='eza -alhg --color --icons=auto --git --git-repos --no-quotes --smart-g
 alias ll='eza -x --color --icons=auto --git --group-directories-first'
 alias lla='eza -xa --color --icons=auto --git --group-directories-first'
 
-alias tree='eza -T' # with -L={DEPTH} you can decide the depth of the recursion
+alias tree="eza -T" # with -L={DEPTH} you can decide the depth of the recursion
 
-alias grep='grep --color'
-alias fgrep='fgrep --color'
-alias egrep='egrep --color'
+alias grep="grep --color"
+alias fgrep="fgrep --color"
+alias egrep="egrep --color"
 
-alias ip='\ip -c'
-alias ipa='\ip -c addr'
+alias ip="\ip -c"
+alias ipa="\ip -c addr"
 
-alias clockdvd='tty-clock -Sbra 75000000 -d 0'
-# alias clock='tty-clock -Scbs'
-alias clock='peaclock --config-dir $HOME/.config/peaclock'
-alias peaclock='peaclock --config-dir $HOME/.config/peaclock'
+alias clockdvd="tty-clock -Sbra 75000000 -d 0"
+# alias clock="tty-clock -Scbs"
+alias clock="peaclock --config-dir $HOME/.config/peaclock"
+alias peaclock="peaclock --config-dir $HOME/.config/peaclock"
 
-alias matrix='neo-matrix'
+alias matrix="neo-matrix"
 
-alias neofetch='fastfetch'
+alias neofetch="astfetch"
 
 alias actually="cowsay -f actually 'Ummm... Actually... '"
-alias nerd='cowsay -f actually'
+alias nerd="cowsay -f actually"
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias dts='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias dfs='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias dts="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias dfs="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
-alias cd..='cd ..'
+alias cd..="cd .."
 
-alias cls='clear'
-alias c='clear'
+alias cls="clear"
+alias c="clear"
 
-alias v='vim'
-alias n='nvim'
-alias vi='nvim'
-alias nano='micro'
+alias v="vim"
+alias n="nvim"
+alias vi="nvim"
+alias nano="micro"
 alias evim='vim -yc "imap <C-S-q> <Esc>:q!<CR>"'
 # alias nano='vim -yc "imap <C-S-q> <Esc>:q!<CR>"'
 
-alias bashrc='nvim $HOME/.bashrc'
-alias bs='nvim $HOME/.bashrc'
-alias s='source $HOME/.bashrc'
+alias bashrc="nvim $HOME/.bashrc"
+alias bs="nvim $HOME/.bashrc"
+alias s="source $HOME/.bashrc"
 
-alias pac='sudo pacman'
+alias pac="sudo pacman"
 
 function colormap() {
     for c in {0..255}; do
