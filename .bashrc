@@ -25,10 +25,10 @@ alias egrep="egrep --color"
 alias ip="\ip -c"
 alias ipa="\ip -c addr"
 
-alias clockdvd="tty-clock -Sbra 75000000 -d 0"
-# alias clock="tty-clock -Scbs"
-alias clock="peaclock --config-dir $HOME/.config/peaclock"
-alias peaclock="peaclock --config-dir $HOME/.config/peaclock"
+alias clockdvd="\tty-clock -Sbra 75000000 -d 0"
+# alias clock="\tty-clock -Scbs"
+alias clock="\peaclock --config-dir $HOME/.config/peaclock"
+alias peaclock="\peaclock --config-dir $HOME/.config/peaclock"
 
 alias matrix="neo-matrix"
 
