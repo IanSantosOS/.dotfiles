@@ -27,8 +27,8 @@ alias ipa='\ip -c addr'
 
 alias clockdvd='tty-clock -Sbra 75000000 -d 0'
 # alias clock='tty-clock -Scbs'
-alias clock='peaclock --config-dir ~/.config/peaclock'
-alias peaclock='peaclock --config-dir ~/.config/peaclock'
+alias clock='peaclock --config-dir $HOME/.config/peaclock'
+alias peaclock='peaclock --config-dir $HOME/.config/peaclock'
 
 alias matrix='neo-matrix'
 
@@ -37,9 +37,9 @@ alias neofetch='fastfetch'
 alias actually="cowsay -f actually 'Ummm... Actually... '"
 alias nerd='cowsay -f actually'
 
-alias dotfiles='/usr/bin/git --git-dir=/home/kaio/.dotfiles --work-tree=/home/kaio'
-alias dts='/usr/bin/git --git-dir=/home/kaio/.dotfiles --work-tree=/home/kaio'
-alias dfs='/usr/bin/git --git-dir=/home/kaio/.dotfiles --work-tree=/home/kaio'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dts='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dfs='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 alias cd..='cd ..'
 
@@ -53,9 +53,9 @@ alias nano='micro'
 alias evim='vim -yc "imap <C-S-q> <Esc>:q!<CR>"'
 # alias nano='vim -yc "imap <C-S-q> <Esc>:q!<CR>"'
 
-alias bashrc='nvim ~/.bashrc'
-alias bs='nvim ~/.bashrc'
-alias s='source ~/.bashrc'
+alias bashrc='nvim $HOME/.bashrc'
+alias bs='nvim $HOME/.bashrc'
+alias s='source $HOME/.bashrc'
 
 alias pac='sudo pacman'
 
@@ -69,7 +69,7 @@ function colormap() {
     echo
 }
 
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init bash)"
 
 export QT_QPA_PLATFORMTHEME=qt6ct
