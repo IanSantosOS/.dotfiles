@@ -32,7 +32,7 @@ alias peaclock="\peaclock --config-dir $HOME/.config/peaclock"
 
 alias matrix="neo-matrix"
 
-alias neofetch="astfetch"
+alias neofetch="fastfetch"
 
 alias actually="cowsay -f actually 'Ummm... Actually... '"
 alias nerd="cowsay -f actually"
