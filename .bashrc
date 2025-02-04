@@ -12,7 +12,7 @@ export EDITOR="nvim"
 
 export PATH="$HOME/.local/bin"
 
-# set -o vim
+# set -o vi
 
 # append to the history file, don't overwrite it
 shopt -s histappend
