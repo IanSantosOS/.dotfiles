@@ -7,3 +7,6 @@
 [submodule ".config/tmux"]
 	path = .config/tmux
 	url = https://github.com/IanSantosOS/.tmux
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
