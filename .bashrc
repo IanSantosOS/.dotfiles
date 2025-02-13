@@ -10,7 +10,7 @@ PS1="[\u@\h \W]\$ "
 
 export EDITOR="nvim"
 
-export PATH="$HOME/.local/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 # set -o vi
 
