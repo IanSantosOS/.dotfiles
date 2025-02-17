@@ -6,90 +6,94 @@
 " Configuration
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-set nocompatible
+set nocompatible           " Deactivate compatible mode with VI
 
-set wildmenu
+set wildmenu               " Enable cmdline completion menu
 
-set path +=**
+set path +=**              " Search for files recursively in subdirectories
 
-set updatetime=300
+set updatetime=300         " Faster update time
 
-set encoding=utf-8
-set fileencoding=utf-8
+set encoding=utf-8         " Set internal encoding to UTF-8
+set fileencoding=utf-8     " Save files with UTF-8 encoding
 
-" set termguicolors
-syntax enable
+" set termguicolors        " Enable 24-bit RGB colors in the terminal
+syntax enable              " Enable syntax highlighting
 
-set number
-set relativenumber
+set number                 " Show line numbers
+set relativenumber         " Show relative line numbers
 
-set colorcolumn=80
-set cursorline
+set colorcolumn=80         " Highlight column 80 for line length indication
 
-set splitbelow
-set splitright
+set cursorline             " Highlight the current line
 
-set nowrap
-set scrolloff=8
-set sidescrolloff=8
+set splitbelow             " Open horizontal splits below the current window
+set splitright             " Open vertical splits to the right of the current window
 
-set autoindent
-set smartindent
-set cindent
+set nowrap                 " Disable line wrapping
+set scrolloff=8            " Keep 8 lines above and below the cursor while scrolling
+set sidescrolloff=8        " Keep 8 columns to the side when scrolling horizontally
 
-set smarttab
-set expandtab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set autoindent             " Enable automatic indentation based on previous line
+set smartindent            " Automatically insert indentation in code blocks
+set cindent                " Enable C/C++ style indentation
 
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
+set smarttab               " Use shiftwidth when inserting tabs
+set expandtab              " Convert tabs to spaces
+set shiftwidth=4           " Set indentation width to 4 spaces
+set tabstop=4              " Display a tab as 4 spaces
+set softtabstop=4          " Number of spaces for a tab when editing
 
-set showcmd
-set cmdheight=1
-set noshowmode
+set ignorecase             " Case-insensitive search
+set smartcase              " Case-sensitive if uppercase is used
+set hlsearch               " Highlight search results
+set incsearch              " Show matches as you type
 
-set showmatch
+set showcmd                " Display command-line
+set cmdheight=1            " Command-line height
+" set noshowmode             " Hide mode display (e.g., -- INSERT --)
 
-set mouse=a
+set showmatch              " Highlight matching brackets
 
-set ruler
+set mouse=a                " Enable mouse support
 
-set clipboard=unnamedplus
+set ruler                  " Show cursor position
 
-set undodir=~/.vim/undodir
-set undofile
-set noswapfile
-set nobackup
-set nowritebackup
+set clipboard=unnamedplus  " Use system clipboard
 
-set lazyredraw
+set undodir=~/.vim/undodir " Set undo file directory
+set undofile               " Enable persistent undo
+set noswapfile             " Disable swap files
+set nobackup               " Disable backup files
+set nowritebackup          " Disable write backup
 
-set hidden
+set lazyredraw             " Optimize redrawing for performance
 
-set autoread
-au FocusGained,BufEnter * silent! checktime
+set hidden                 " Allow switching buffers without saving
 
-set magic
+set autoread               " Auto-reload files when changed externally
+au FocusGained,BufEnter * silent! checktime " Check for file changes on focus
 
-set noerrorbells
-set novisualbell
+set magic                  " Enable extended regex patterns
 
-" Always show the status line
-set laststatus=2
+set noerrorbells           " Disable error beeps
+set novisualbell           " Disable visual bell
 
-set foldcolumn=1
+set laststatus=2           " Always show the status line
 
-set regexpengine=0
+set foldcolumn=1           " Show fold column
 
-set background=dark
+set regexpengine=0         " Auto-select the best regex engine
+
+set background=dark        " Use dark background theme
+
+" Return to last edit position when opening files
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Format the status line
 " set statusline=\ %<%f%m%r%h\ %w%=%l/%c\ [%p%%]\ 
-set statusline=\ 
+set statusline=%#StatusLine#
+set statusline+=\ 
 set statusline+=%{mode()}
 " set statusline+=%{StatusLineMode()}
 set statusline=\ 
@@ -122,12 +126,15 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 let mapleader = " "
 
-nmap <C-s> :update<CR>
-vmap <C-s> :update<CR>
-imap <C-s> :update<CR>
+nmap <C-s> <CMD>update<CR>
+vmap <C-s> <CMD>update<CR>
+imap <C-s> <CMD>update<CR>
 
-nmap <silent> <leader>/ :let @/=''<CR>
-vmap <silent> <leader>/ :let @/=''<CR>
+nmap <leader>/ <CMD>let @/=''<CR>
+vmap <leader>/ <CMD>let @/=''<CR>
+
+inoremap jk <ESC>
+inoremap kj <ESC>
 
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
@@ -135,19 +142,22 @@ vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
 " Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
-map <leader>t<leader> :tabnext<cr>
-map <leader>te :tabedit <C-r>=escape(expand("%:p:h"), " ")<cr>/
+noremap <leader>tn <CMD>tabnew<CR>
+noremap <leader>to <CMD>tabonly<CR>
+noremap <leader>tx <CMD>tabclose<CR>
+noremap <leader>tm :tabmove 
+noremap <leader>pt <CMD>tabprevious<CR>
+noremap <leader>nt <CMD>tabnext<CR>
+noremap <leader>te :tabedit <C-r>=escape(expand("%:p:h"), " ")<CR>/
 
-xnoremap <silent> <leader>p "_dP
-nnoremap <silent> <leader>Y "+Y
-nnoremap <silent> <leader>y "+y
-vnoremap <silent> <leader>y "+y
-nnoremap <silent> <leader>dd "_d
-vnoremap <silent> <leader>dd "_d
+xnoremap <leader>p "_dP
+nnoremap <leader>Y "+Y
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>P "+p
+vnoremap <leader>P "+p
+nnoremap <leader>dd "_d
+vnoremap <leader>dd "_d
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 " AutoCMD
@@ -168,16 +178,16 @@ function! StatusLineGit()
     return strlen(l:branchname) > 0?' '.l:branchname.' ':''
 endfunction
 
-function! StatusLineMode()
-    return mode() ==# 'n' ? 'NORMAL' :
-            \ mode() ==# 'i' ? 'INSERT' :
-            \ mode() ==# 'v' ? 'VISUAL' :
-            \ mode() ==# 'V' ? 'V-LINE' :
-            \ mode() ==# '' ? 'V-BLOCK' :
-            \ mode() ==# 'R' ? 'REPLACE' :
-            \ mode() ==# 'c' ? 'COMMAND' :
-            \ mode()
-endfunction
+" function! StatusLineMode()
+"     return mode() ==# 'n' ? 'NORMAL' :
+"             \ mode() ==# 'i' ? 'INSERT' :
+"             \ mode() ==# 'v' ? 'VISUAL' :
+"             \ mode() ==# 'V' ? 'V-LINE' :
+"             \ mode() ==# '' ? 'V-BLOCK' :
+"             \ mode() ==# 'R' ? 'REPLACE' :
+"             \ mode() ==# 'c' ? 'COMMAND' :
+"             \ mode()
+" endfunction
 
 "===============================================================================
 " BUILTIN PLUGINS
@@ -197,6 +207,8 @@ let g:netrw_winsize=20
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 " Keymap
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+nnoremap <leader>fe <CMD>Lexplore!<CR>
 
 "===============================================================================
 " EXTERNAL PLUGINS
@@ -241,10 +253,10 @@ colorscheme seoul256
 " Keymap
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" map <silent> <C-Up> :TmuxNavigateUp<CR>
-" map <silent> <C-Down> :TmuxNavigateDown<CR>
-" map <silent> <C-Left> :TmuxNavigateLeft<CR>
-" map <silent> <C-Right> :TmuxNavigateRight<CR>
+map <C-Up>    <CMD>TmuxNavigateUp<CR>
+map <C-Down>  <CMD>TmuxNavigateDown<CR>
+map <C-Left>  <CMD>TmuxNavigateLeft<CR>
+map <C-Right> <CMD>TmuxNavigateRight<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 " AutoCMD
