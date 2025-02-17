@@ -10,11 +10,12 @@ PS1="[\u@\h \W]\$ "
 
 export EDITOR="nvim"
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
-# set -o vi
+# Enable vi mode for command line editing
+set -o vi
 
-# append to the history file, don't overwrite it
+# Append to the history file, don't overwrite it
 shopt -s histappend
 
 # Allows you to cd into directory merely by typing the directory name
@@ -54,6 +55,9 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias dfs="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 alias cd..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
 
 alias cls="clear"
 alias c="clear"
@@ -72,11 +76,13 @@ alias s="source $HOME/.bashrc"
 alias pac="sudo pacman"
 
 # GIT
-alias gadd="git add"
-alias gpush="git push"
-alias gstatus="git status"
-alias gcommit="git commit"
-alias gremote="git remote"
+alias ga="git add"
+alias gp="git push"
+alias gd="git diff"
+alias gpl="git pull"
+alias gs="git status"
+alias gc="git commit"
+alias gr="git remote"
 
 colormap() {
     for c in {0..255}; do
