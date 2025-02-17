@@ -6,7 +6,7 @@
 " Configuration
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-set nocompatible           " Deactivate compatible mode with VI
+set nocompatible           " Disable VI compatibility mode
 
 set wildmenu               " Enable cmdline completion menu
 
@@ -40,18 +40,18 @@ set cindent                " Enable C/C++ style indentation
 
 set smarttab               " Use shiftwidth when inserting tabs
 set expandtab              " Convert tabs to spaces
+set softtabstop=4          " Number of spaces for a tab when editing
 set shiftwidth=4           " Set indentation width to 4 spaces
 set tabstop=4              " Display a tab as 4 spaces
-set softtabstop=4          " Number of spaces for a tab when editing
 
 set ignorecase             " Case-insensitive search
 set smartcase              " Case-sensitive if uppercase is used
-set hlsearch               " Highlight search results
 set incsearch              " Show matches as you type
+set hlsearch               " Highlight search results
 
 set showcmd                " Display command-line
 set cmdheight=1            " Command-line height
-" set noshowmode             " Hide mode display (e.g., -- INSERT --)
+" set noshowmode             " Hide mode display inside cmdline (e.g., -- INSERT --)
 
 set showmatch              " Highlight matching brackets
 
@@ -69,7 +69,13 @@ set nowritebackup          " Disable write backup
 
 set lazyredraw             " Optimize redrawing for performance
 
-set hidden                 " Allow switching buffers without saving
+set hidden                 " Keep buffers in memory when abandoned
+
+set breakindent            " Maintain indentation on wrapped lines
+
+set timeoutlen=1000        " Set key sequence timeout in milliseconds
+
+set completeopt=menuone,noinsert,noselect,popup " Configure completion behavior
 
 set autoread               " Auto-reload files when changed externally
 au FocusGained,BufEnter * silent! checktime " Check for file changes on focus
@@ -199,10 +205,10 @@ endfunction
 
 filetype plugin indent on
 
-let g:netrw_banner=0
-let g:netrw_altv=1
-let g:netrw_liststyle=3
-let g:netrw_winsize=20
+let g:netrw_banner=0       " Hide netrw banner
+let g:netrw_altv=1         " Open splits to the right
+let g:netrw_liststyle=3    " Use tree-style view
+let g:netrw_winsize=20     " Window size
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 " Keymap
