@@ -12,18 +12,18 @@ set wildmenu               " Enable cmdline completion menu
 
 set path +=**              " Search for files recursively in subdirectories
 
-set updatetime=300         " Faster update time
+set updatetime=30          " Faster update time
 
 set encoding=utf-8         " Set internal encoding to UTF-8
 set fileencoding=utf-8     " Save files with UTF-8 encoding
 
-" set termguicolors        " Enable 24-bit RGB colors in the terminal
+set termguicolors          " Enable 24-bit RGB colors in the terminal
 syntax enable              " Enable syntax highlighting
 
 set number                 " Show line numbers
 set relativenumber         " Show relative line numbers
 
-set colorcolumn=80         " Highlight column 80 for line length indication
+set colorcolumn=81         " Highlight column 81 for line length indication
 
 set cursorline             " Highlight the current line
 
@@ -31,8 +31,8 @@ set splitbelow             " Open horizontal splits below the current window
 set splitright             " Open vertical splits to the right of the current window
 
 set nowrap                 " Disable line wrapping
-set scrolloff=8            " Keep 8 lines above and below the cursor while scrolling
-set sidescrolloff=8        " Keep 8 columns to the side when scrolling horizontally
+set scrolloff=10           " Keep 10 lines above and below the cursor while scrolling
+set sidescrolloff=8        " Keep 08 columns to the side when scrolling horizontally
 
 set autoindent             " Enable automatic indentation based on previous line
 set smartindent            " Automatically insert indentation in code blocks
@@ -131,6 +131,8 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 let mapleader = " "
+
+inoremap <C-R><C-V> <C-R>. = <C-R>"
 
 nmap <C-s> <CMD>update<CR>
 vmap <C-s> <CMD>update<CR>
@@ -252,7 +254,7 @@ call plug#end()
 " | Dark  | 233     | 239      |
 " | Light | 252     | 256      |
 " ------------------------------
-let g:seoul256_background = 235
+let g:seoul256_background = 234
 colorscheme seoul256
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
