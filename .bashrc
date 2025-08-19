@@ -25,10 +25,10 @@ shopt -s autocd
 # alias la='\ls -Noah --color --group-directories-first'
 # alias ll='\ls -x --color --group-directories-first'
 # alias lla='\ls -xa --color --group-directories-first'
-alias ls='eza -lhg --color --icons=auto --git --git-repos --no-quotes --smart-group --group-directories-first'
+alias l='eza -lhg --color --icons=auto --git --git-repos --no-quotes --smart-group --group-directories-first'
 alias la='eza -alhg --color --icons=auto --git --git-repos --no-quotes --smart-group --group-directories-first'
-alias ll='eza -x --color --icons=auto --git --group-directories-first'
-alias lla='eza -xa --color --icons=auto --git --group-directories-first'
+alias ls='eza -x --color --icons=auto --git --group-directories-first'
+alias lsa='eza -xa --color --icons=auto --git --group-directories-first'
 
 alias tree="eza -T" # with -L={DEPTH} you can decide the depth of the recursion
 
@@ -64,9 +64,11 @@ alias c="clear"
 
 alias v="vim"
 alias n="nvim"
-alias nano="micro"
-alias evim='vim -yc "imap <C-S-q> <Esc>:q!<CR>"'
-# alias nano='vim -yc "imap <C-S-q> <Esc>:q!<CR>"'
+alias nt='NVIM_APPNAME=nvim-notes nvim'
+alias notes='NVIM_APPNAME=nvim-notes nvim'
+alias min='NVIM_APPNAME=nvim-minimal nvim'
+alias minimal='NVIM_APPNAME=nvim-minimal nvim'
+# alias nano="micro" # I only use (n)vim, so micro kind of lost its purpose for me
 
 alias mkdir="mkdir -pv"
 
@@ -74,15 +76,6 @@ alias bs="$EDITOR $HOME/.bashrc"
 alias s="source $HOME/.bashrc"
 
 alias pac="sudo pacman"
-
-# GIT
-alias ga="git add"
-alias gp="git push"
-alias gd="git diff"
-alias gpl="git pull"
-alias gs="git status"
-alias gc="git commit"
-alias gr="git remote"
 
 colormap() {
     for c in {0..255}; do
