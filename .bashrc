@@ -30,7 +30,7 @@ alias la='eza -alhg --color --icons=auto --git --git-repos --no-quotes --smart-g
 alias ls='eza -x --color --icons=auto --git --group-directories-first'
 alias lsa='eza -xa --color --icons=auto --git --group-directories-first'
 
-alias tree="eza -T" # with -L={DEPTH} you can decide the depth of the recursion
+alias tree="eza -T --group-directories-first" # with -L={DEPTH} you can decide the depth of the recursion
 
 alias grep="grep --color"
 alias fgrep="fgrep --color"
