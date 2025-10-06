@@ -25,16 +25,15 @@ shopt -s autocd
 # alias la='\ls -Noah --color --group-directories-first'
 # alias ll='\ls -x --color --group-directories-first'
 # alias lla='\ls -xa --color --group-directories-first'
-alias l='eza -lhg --color --icons=auto --git --git-repos --no-quotes --smart-group --group-directories-first'
-alias la='eza -alhg --color --icons=auto --git --git-repos --no-quotes --smart-group --group-directories-first'
-alias ls='eza -x --color --icons=auto --git --group-directories-first'
-alias lsa='eza -xa --color --icons=auto --git --group-directories-first'
+alias l='eza -lhg --icons=auto --git --git-repos-no-status --no-quotes --smart-group --group-directories-first'
+alias la='eza -alhg --icons=auto --git --git-repos-no-status --no-quotes --smart-group --group-directories-first'
+alias ls='eza -x --group-directories-first'
+alias lsa='eza -xa --group-directories-first'
 
-alias tree="eza -T --group-directories-first" # with -L={DEPTH} you can decide the depth of the recursion
+# with -L={DEPTH} you can decide the depth of the recursion
+alias tree="eza -T --icons=auto --group-directories-first"
 
 alias grep="grep --color"
-alias fgrep="fgrep --color"
-alias egrep="egrep --color"
 
 alias ip="\ip -c"
 alias ipa="\ip -c addr"
@@ -64,11 +63,9 @@ alias c="clear"
 
 alias v="vim"
 alias n="nvim"
-alias nt='NVIM_APPNAME=nvim-notes nvim'
-alias notes='NVIM_APPNAME=nvim-notes nvim'
-alias min='NVIM_APPNAME=nvim-minimal nvim'
-alias minimal='NVIM_APPNAME=nvim-minimal nvim'
-# alias nano="micro" # I only use (n)vim, so micro kind of lost its purpose for me
+alias nt="NVIM_APPNAME=nvim-notes nvim"
+alias nvim-base="NVIM_APPNAME=nvim-base nvim"
+alias nvim-notes="NVIM_APPNAME=nvim-notes nvim"
 
 alias mkdir="mkdir -pv"
 
