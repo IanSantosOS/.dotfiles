@@ -8,20 +8,22 @@
 " Organize the headings better
 " Maybe create more keymaps (and make every one 'noremap')
 " Keymap for toggle colorcolumn
-"
-" Now I'm gonna sleep
 
 colorscheme retrobox
+set background=dark        " Use dark background theme
 
 syntax enable
 syntax on
 
 set nocompatible
+set termguicolors          " Enable 24-bit RGB colors in the terminal
+set mouse=a                " Enable mouse support
+
+set noerrorbells           " Disable error beeps
+set novisualbell           " Disable visual bell
 
 set encoding=utf-8         " Set internal encoding to UTF-8
 set fileencoding=utf-8     " Save files with UTF-8 encoding
-
-set termguicolors          " Enable 24-bit RGB colors in the terminal
 
 " let g:netrw_banner=0     " Hide netrw banner
 let g:netrw_altv=1         " Open splits to the right
@@ -30,11 +32,15 @@ let g:netrw_alto=1         " Open splits to the bottom
 set splitbelow             " Open horizontal splits below the current window
 set splitright             " Open vertical splits to the right of the current window
 
-set path +=**              " Search for files recursively in subdirectories
+set path+=**              " Search for files recursively in subdirectories
+
+set shortmess+=asW
 
 set wildoptions=fuzzy,pum,tagfile
 
 set formatoptions=tcqronl1jp
+
+set completeopt=menuone,noinsert,noselect,popup " Configure completion behavior
 
 set number                 " Show line numbers
 set relativenumber         " Show relative line numbers
@@ -48,6 +54,7 @@ set sidescrolloff=8        " Keep 08 columns to the side when scrolling horizont
 set autoindent             " Enable automatic indentation based on previous line
 set smartindent            " Automatically insert indentation in code blocks
 set cindent                " Enable C/C++ style indentation
+set breakindent            " Maintain indentation on wrapped lines
 
 set smarttab               " Use shiftwidth when inserting tabs
 set expandtab              " Convert tabs to spaces
@@ -64,8 +71,7 @@ set hlsearch               " Highlight search results
 
 set showcmd                " Display command-line
 set cmdheight=1            " Command-line height
-
-set mouse=a                " Enable mouse support
+set laststatus=2           " Always show the status line
 
 set undodir=~/.vim/undodir " Set undo file directory
 set undofile               " Enable persistent undo
@@ -73,37 +79,21 @@ set noswapfile             " Disable swap files
 set nobackup               " Disable backup files
 set nowritebackup          " Disable write backup
 
-set lazyredraw             " Optimize redrawing for performance
-
 set hidden                 " Keep buffers in memory when abandoned
 
-set breakindent            " Maintain indentation on wrapped lines
-
-set timeoutlen=1000        " Set key sequence timeout in milliseconds
-
-set completeopt=menuone,noinsert,noselect,popup " Configure completion behavior
-
 set autoread               " Auto-reload files when changed externally
-au FocusGained,BufEnter * silent! checktime " Check for file changes on focus
 
 set magic                  " Enable extended regex patterns
-
-set noerrorbells           " Disable error beeps
-set novisualbell           " Disable visual bell
-
-set laststatus=2           " Always show the status line
 
 set foldcolumn=1           " Show fold column
 
 set regexpengine=0         " Auto-select the best regex engine
 
-set background=dark        " Use dark background theme
-
 "----------------------------------------------------------------
 " Packages
 "----------------------------------------------------------------
 
-filetype plugin on
+filetype plugin indent on
 
 packadd! hlyank
 packadd! comment
@@ -147,43 +137,77 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 let mapleader = " "
 
-" For some reason <C-]> in my keyboard isn't <C-]>... so I have to remap it.
+"----------------------------------------------------------------
+" Others
+"----------------------------------------------------------------
+
+" For some reason <C-]> in my keyboard isn't <C-]>...
+" So I have to remap it.
 nmap  <C-]>
 vmap  <C-]>
 imap  <C-]>
 cmap  <C-]>
 
+" Auto create a variable from a substitute value
 inoremap <C-R><C-V> <C-R>. = <C-R>"
+
+" Easy escape in INSERT mode
 inoremap jk <ESC>
 
-nnoremap J mzJ`z
-
+" Select all text
 nmap <leader>a govG$
 vmap <leader>a <ESC>govG$
 
+" Toggle list (the tab and space characters)
 nmap <leader>it <CMD>set list!<CR>
 nmap <leader>/ <CMD>let @/=''<CR>
 
-nnoremap <leader>e <CMD>Ex<CR>
-nnoremap <leader>fp :find 
-nnoremap <leader>ph :vert h 
-nnoremap <leader>pb :buffers 
-
-nnoremap <leader>bd <CMD>bdelete<CR>
-
-nmap <leader>q <CMD>quit<CR>
-nmap <leader>Q <CMD>q!<CR>
-nmap <leader>w <CMD>update<CR>
-nmap <leader>W <CMD>wa<CR>
-
+" Moving lines
 nnoremap <silent> <leader>j :m .+1<CR>==
 nnoremap <silent> <leader>k :m .-2<CR>==
 vnoremap <silent> J :m '>+1<CR>gv=gv
 vnoremap <silent> K :m '<-2<CR>gv=gv
 
+"----------------------------------------------------------------
+" File Related
+"----------------------------------------------------------------
+
+" Search (bad habits, except the netrw one)
+nnoremap <leader>e <CMD>Ex<CR>
+nnoremap <leader>fp :find 
+nnoremap <leader>ph :vert h 
+nnoremap <leader>pb :buffer 
+
+" Buffer delete
+nnoremap <leader>bd <CMD>bdelete<CR>
+
+" Quit and save keymaps
+nmap <leader>q <CMD>quit<CR>
+nmap <leader>Q <CMD>q!<CR>
+nmap <leader>w <CMD>update<CR>
+nmap <leader>W <CMD>wa<CR>
+
+"----------------------------------------------------------------
+" Better Defaults
+"----------------------------------------------------------------
+
+" Why this isn't the default vim?
+nnoremap Y y$
+
+" Better joining lines
+nnoremap J mzJ`z
+
+" Better indent
 vnoremap < <gv
 vnoremap > >gv
 
+" Center cursor when searching
+nnoremap n nzzzv
+vnoremap n nzzzv
+nnoremap N Nzzzv
+vnoremap N Nzzzv
+
+" Center cursor when scrolling
 nnoremap <C-u> <C-u>zz
 vnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
@@ -192,11 +216,6 @@ nnoremap <C-f> <C-f>zz
 vnoremap <C-f> <C-f>zz
 nnoremap <C-b> <C-b>zz
 vnoremap <C-b> <C-b>zz
-
-nnoremap n nzzzv
-vnoremap n nzzzv
-nnoremap N Nzzzv
-vnoremap N Nzzzv
 
 "----------------------------------------------------------------
 " Clipboard
@@ -208,9 +227,8 @@ nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>P "+p
 vnoremap <leader>P "+p
-nnoremap <leader>dd "_d
-vnoremap <leader>dd "_d
-nnoremap Y y$
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
 
 "----------------------------------------------------------------
 " Tabs (why?)
@@ -227,14 +245,23 @@ nnoremap <leader>nt <CMD>tabnext<CR>
 " Window / Panel
 "----------------------------------------------------------------
 
+" Navigate
 nnoremap <C-k> <CMD>wincmd k<CR>
 nnoremap <C-j> <CMD>wincmd j<CR>
 nnoremap <C-h> <CMD>wincmd h<CR>
 nnoremap <C-l> <CMD>wincmd l<CR>
-nnoremap <C-M-k> <cmd>resize +5<cr>
-nnoremap <c-M-j> <cmd>resize -5<cr>
-nnoremap <c-M-h> <cmd>vertical resize -10<cr>
+
+" Resize
+nnoremap <C-M-k> <CMD>resize +5<CR>
+nnoremap <c-M-j> <CMD>resize -5<CR>
+nnoremap <c-M-h> <CMD>vertical resize -10<CR>
 nnoremap <c-M-l> <CMD>vertical resize +10<CR>
+
+" Resize with arrow keys (the forbidden technique)
+nnoremap <Up> <CMD>resize +5<CR>
+nnoremap <Down> <CMD>resize -5<CR>
+nnoremap <Left> <CMD>vertical resize -10<CR>
+nnoremap <Right> <CMD>vertical resize +10<CR>
 
 "===============================================================================
 " AUTOCMDS
