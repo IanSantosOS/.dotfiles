@@ -64,7 +64,6 @@ alias c="clear"
 alias v="vim"
 alias n="nvim"
 alias nt="NVIM_APPNAME=nvim-notes nvim"
-alias nvim-base="NVIM_APPNAME=nvim-base nvim"
 alias nvim-notes="NVIM_APPNAME=nvim-notes nvim"
 
 alias mkdir="mkdir -pv"
